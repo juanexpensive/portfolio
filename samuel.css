@@ -7,7 +7,7 @@
   --radius-a: 18px 11px 16px 13px;
   --radius-b: 12px 20px 11px 17px;
   --radius-c: 20px 13px 18px 10px;
-  --hard-shadow: 5px 5px 0 0 #000000;
+  --hairline-shadow: 2px 2px 0 0 #000000;
 }
 
 * {
@@ -35,12 +35,9 @@ a {
 .paper-noise {
   position: fixed;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px),
-    radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.04) 0 1px, transparent 1px),
-    linear-gradient(transparent 97%, rgba(0, 0, 0, 0.04) 97%);
-  background-size: 28px 28px, 34px 34px, 100% 30px;
-  opacity: 0.35;
+  background-image: linear-gradient(transparent 97%, rgba(0, 0, 0, 0.06) 97%);
+  background-size: 100% 34px;
+  opacity: 0.14;
   pointer-events: none;
   z-index: -1;
 }
@@ -72,8 +69,7 @@ a {
 
 .brand,
 h1,
-h2,
-h3 {
+h2 {
   font-family: "Caveat", cursive;
 }
 
@@ -125,7 +121,7 @@ h3 {
 .hero h1 {
   margin: 0;
   font-size: clamp(4rem, 10vw, 7rem);
-  line-height: 0.9;
+  line-height: 0.96;
   font-weight: 700;
 }
 
@@ -170,14 +166,14 @@ h3 {
   padding: 0.9rem 1.2rem;
   border: 1.5px solid var(--line);
   border-radius: var(--radius-a);
-  box-shadow: var(--hard-shadow);
+  box-shadow: var(--hairline-shadow);
   transition: transform 140ms ease;
 }
 
 .button:active,
 .button:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 #000000;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 0 #000000;
 }
 
 .button-ghost {
@@ -199,7 +195,7 @@ h3 {
 .interest-scribble,
 .footer-note {
   border: 1.5px solid var(--line);
-  box-shadow: var(--hard-shadow);
+  box-shadow: var(--hairline-shadow);
 }
 
 .hero-sheet {
@@ -219,6 +215,13 @@ h3 {
   border-radius: var(--radius-c);
 }
 
+.margin-note {
+  margin-top: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  border-left: 1.5px solid var(--line);
+  font-size: 0.92rem;
+}
+
 .sheet-code p {
   margin: 0.3rem 0;
 }
@@ -230,7 +233,7 @@ h3 {
 .section-heading h2 {
   margin: 0;
   font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .sketch-panel {
@@ -268,10 +271,15 @@ h3 {
 }
 
 .stack-card h3,
-.project-head h3,
-.timeline-head h3 {
+.project-head h3 {
   margin: 0 0 0.9rem;
   font-size: 2rem;
+}
+
+.timeline-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: "Courier Prime", monospace;
 }
 
 .tech-row {
@@ -289,7 +297,7 @@ h3 {
   padding: 0.7rem 0.9rem;
   border: 1.5px solid var(--line);
   border-radius: 16px 11px 17px 9px;
-  box-shadow: 3px 3px 0 0 #000000;
+  box-shadow: 1px 1px 0 0 #000000;
   font-weight: 700;
 }
 
@@ -314,6 +322,14 @@ h3 {
   grid-template-columns: 260px 1fr;
   gap: 1.2rem;
   align-items: start;
+}
+
+.project-panel-featured {
+  grid-template-columns: 320px 1fr;
+}
+
+.project-panel-offset {
+  margin-left: 2rem;
 }
 
 .project-copy p {
@@ -471,6 +487,10 @@ h3 {
   .project-panel,
   .footer-layout {
     grid-template-columns: 1fr;
+  }
+
+  .project-panel-offset {
+    margin-left: 0;
   }
 
   .project-media {
