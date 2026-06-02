@@ -1,6 +1,7 @@
 const navLinks = document.querySelectorAll(".site-nav a");
 const sections = [...document.querySelectorAll("main section[id]")];
 const revealItems = document.querySelectorAll(".reveal");
+const heroTitle = document.querySelector(".hero-title");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -27,8 +28,7 @@ const syncActiveLink = () => {
   });
 
   navLinks.forEach((link) => {
-    const isCurrent = link.getAttribute("href") === `#${currentId}`;
-    link.classList.toggle("is-active", isCurrent);
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${currentId}`);
   });
 };
 
@@ -43,12 +43,46 @@ const revealObserver = new IntersectionObserver(
   },
   {
     threshold: 0.18,
-    rootMargin: "0px 0px -40px 0px",
+    rootMargin: "0px 0px -36px 0px",
   }
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
+const typeHeroTitle = () => {
+  if (!heroTitle) {
+    return;
+  }
+
+  const fullText = heroTitle.dataset.fullText ?? heroTitle.textContent ?? "";
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion) {
+    heroTitle.textContent = fullText;
+    heroTitle.classList.add("is-typed");
+    return;
+  }
+
+  heroTitle.textContent = "";
+  let index = 0;
+
+  const tick = () => {
+    heroTitle.textContent = fullText.slice(0, index);
+    if (index < fullText.length) {
+      index += 1;
+      window.setTimeout(tick, 45);
+    } else {
+      heroTitle.classList.add("is-typed");
+    }
+  };
+
+  tick();
+};
+
 window.addEventListener("scroll", syncActiveLink, { passive: true });
-window.addEventListener("load", syncActiveLink);
+window.addEventListener("load", () => {
+  syncActiveLink();
+  typeHeroTitle();
+});
+
 syncActiveLink();
