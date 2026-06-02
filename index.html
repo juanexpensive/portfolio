@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">  <title>Juan Caro Vaquero</title>
+<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">  <title data-i18n="meta.title">Juan Caro Vaquero</title>
   <meta
     name="description"
+    data-i18n-attr="content"
+    data-i18n="meta.description"
     content="Variante visual del portfolio de Juan Caro Vaquero con estética line-art indie manga."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +22,19 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio">Juan Caro Vaquero</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#inicio">Home</a>
-        <a href="#sobre-mi">About Me</a>
-        <a href="#stack">Stack</a>
-        <a href="#proyectos">Projects</a>
-        <a href="#experiencia">Experience</a>
-      </nav>
+      <div class="header-controls">
+        <nav class="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label" data-i18n="nav.aria">
+          <a href="#inicio" data-i18n="nav.home">Home</a>
+          <a href="#sobre-mi" data-i18n="nav.about">About Me</a>
+          <a href="#stack" data-i18n="nav.stack">Stack</a>
+          <a href="#proyectos" data-i18n="nav.projects">Projects</a>
+          <a href="#experiencia" data-i18n="nav.experience">Experience</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language selector" data-i18n-attr="aria-label" data-i18n="lang.selector">
+          <button class="lang-button is-active" type="button" data-lang-button="en" aria-pressed="true">EN</button>
+          <button class="lang-button" type="button" data-lang-button="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -34,35 +42,32 @@
     <section class="hero section" id="inicio">
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow">portfolio / line-art notes</p>
           <h1>Juan Caro Vaquero</h1>
-          <p class="hero-subtitle">Fullstack Dev &amp; Law </p>
-          <p class="hero-note">
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Fullstack Dev &amp; Law </p>
+          <p class="hero-note" data-i18n="hero.note">
             I'm Juan, a fullstack developer with a background in law. I build software with a focus on clean architecture and thoughtful design :D
           </p>
           <div class="hero-actions">
-            <a class="button doodle-hover" href="#proyectos">View Projects</a>
-            <a class="button button-ghost doodle-hover" href="mailto:carovaquerojuan@gmail.com">Contact</a>
-            <button class="button is-disabled" type="button" aria-disabled="true" disabled>CV coming soon</button>
+            <a class="button doodle-hover" href="#proyectos" data-i18n="hero.ctaProjects">View Projects</a>
+            <a class="button button-ghost doodle-hover" href="mailto:carovaquerojuan@gmail.com" data-i18n="hero.ctaContact">Contact</a>
+            <button class="button is-disabled" type="button" aria-disabled="true" disabled data-i18n="hero.ctaCv">CV coming soon</button>
           </div>
-          <div class="social-strip" aria-label="Social media">
+          <div class="social-strip" aria-label="Social media" data-i18n-attr="aria-label" data-i18n="hero.socialAria">
             <a class="doodle-hover" href="https://www.linkedin.com/in/dev-juan-caro-vaquero/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="doodle-hover" href="https://github.com/juanexpensive" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
 
-        <aside class="hero-margin reveal delay-1" aria-label="Side notes">
+        <aside class="hero-margin reveal delay-1" aria-label="Side notes" data-i18n-attr="aria-label" data-i18n="hero.sideAria">
           <div class="margin-block note-sheet">
-            <p class="margin-label">side note</p>
-            <p>
-              Shopping list for the week:
-              <ul>
-                <li>Monster White</li>
-                <li>Complete set of a Warhammer army</li>
-                <li>Food?</li>
-                <li>Monster White</li>
-              </ul>
-            </p>
+            <p class="margin-label" data-i18n="hero.sideLabel">side note</p>
+            <p data-i18n="hero.listTitle">Shopping list for the week:</p>
+            <ul class="side-list">
+              <li data-i18n="hero.list1">Monster White</li>
+              <li data-i18n="hero.list2">Complete set of a Warhammer army</li>
+              <li data-i18n="hero.list3">Food?</li>
+              <li data-i18n="hero.list4">Monster White</li>
+            </ul>
           </div>
           <div class="floating-doodle floating-doodle-hero doodle-hover">
             <img
@@ -78,22 +83,22 @@
     <section class="section section-ruled" id="sobre-mi">
       <div class="container two-column">
         <div class="section-heading reveal">
-          <p class="eyebrow">About Me</p>
-          <h2>Why I Do What I Do</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">About Me</p>
+          <h2 data-i18n="about.title">Why I Do What I Do</h2>
         </div>
         <article class="text-column reveal delay-1">
-          <p>
+          <p data-i18n="about.p1">
            I had always been intrigued by coding, and I didn't want to live with the regret of never trying it. Once I took the leap, I fell in love with it and decided to pivot from my legal background to tech</p>
-          <p>
+          <p data-i18n="about.p2">
             I like building software that looks good, runs fast, and is clean. I enjoy learning from others and always try to be helpful.
           </p>
-          <p>
+          <p data-i18n="about.p3">
             When I get stuck on a tough problem, I like to take my time to think it through. To break through roadblocks, I usually do one of two things: I write about the problem to organize my thoughts, or I explain it to my friends and peers to gain a completely new perspective.
           </p>
         </article>
         <aside class="side-column reveal delay-2">
           <div class="floating-doodle floating-doodle-side doodle-hover">
-            <div class="doodle-placeholder" role="img" aria-label="Kitty placeholder">
+            <div class="doodle-placeholder" role="img" aria-label="Kitty placeholder" data-i18n-attr="aria-label" data-i18n="about.doodleAria">
             <img
               class="doodle-image"
               src="assets/punpun-volando.jpg"
@@ -108,13 +113,13 @@
     <section class="section" id="stack">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Stack</p>
-          <h2>Skills</h2>
+          <p class="eyebrow" data-i18n="stack.eyebrow">Stack</p>
+          <h2 data-i18n="stack.title">Skills</h2>
         </div>
         <div class="tool-ledger reveal delay-1">
           <div class="tool-row">
-            <p class="tool-label">Languages</p>
-            <div class="tech-row" aria-label="Languages">
+            <p class="tool-label" data-i18n="stack.languages">Languages</p>
+            <div class="tech-row" aria-label="Languages" data-i18n-attr="aria-label" data-i18n="stack.languages">
               <span class="tech-pill doodle-hover" title="C#"><i class="devicon-csharp-plain colored"></i></span>
               <span class="tech-pill doodle-hover" title="Python"><i class="devicon-python-plain colored"></i></span>
               <span class="tech-pill doodle-hover" title="Java"><i class="devicon-java-plain colored"></i></span>
@@ -124,8 +129,8 @@
             </div>
           </div>
           <div class="tool-row">
-            <p class="tool-label">Frameworks / Tech</p>
-            <div class="tech-row" aria-label="Frameworks and technologies">
+            <p class="tool-label" data-i18n="stack.frameworks">Frameworks / Tech</p>
+            <div class="tech-row" aria-label="Frameworks and technologies" data-i18n-attr="aria-label" data-i18n="stack.frameworksAria">
               <span class="tech-pill doodle-hover" title="React"><i class="devicon-react-original-wordmark colored"></i></span>
               <span class="tech-pill doodle-hover" title="Angular"><i class="devicon-angularjs-plain colored"></i></span>
               <span class="tech-pill doodle-hover" title="FastAPI"><i class="devicon-fastapi-plain colored"></i></span>
@@ -149,8 +154,8 @@
     <section class="section section-ruled" id="proyectos">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Personal Projects</p>
-          <h2>My works</h2>
+          <p class="eyebrow" data-i18n="projects.eyebrow">Personal Projects</p>
+          <h2 data-i18n="projects.title">My works</h2>
         </div>
 
         <article class="project-entry project-entry-featured reveal delay-1">
@@ -162,7 +167,7 @@
             </div>
           </div>
           <div class="project-entry-body">
-            <div class="entry-visual image-placeholder" role="img" aria-label="Plotea visual placeholder">
+            <div class="entry-visual image-placeholder" role="img" aria-label="Plotea visual placeholder" data-i18n-attr="aria-label" data-i18n="projects.ploteaAria">
             <img
               class="doodle-image"
               src="assets/plotea-star.png"
@@ -170,8 +175,8 @@
             >
             </div>
             <div class="entry-copy">
-              <p>I HATE LETTERBOXD! </p>
-              <p>So I created the version of Letterboxd I wanted to use: a clean, intuitive app. I designed the architecture with scalability in mind, using clean architecture principles.</p>
+              <p data-i18n="projects.ploteaP1">I HATE LETTERBOXD! </p>
+              <p data-i18n="projects.ploteaP2">So I created the version of Letterboxd I wanted to use: a clean, intuitive app. I designed the architecture with scalability in mind, using clean architecture principles.</p>
               <ul class="tag-list">
                 <li>Clean Architecture</li>
                 <li>Mobile</li>
@@ -190,11 +195,11 @@
             </div>
           </div>
           <div class="project-entry-body project-entry-body-reverse">
-            <div class="entry-visual image-placeholder" role="img" aria-label="PayTogether visual placeholder">
-              <span>Image missing here</span>
+            <div class="entry-visual image-placeholder" role="img" aria-label="PayTogether visual placeholder" data-i18n-attr="aria-label" data-i18n="projects.payTogetherAria">
+              <span data-i18n="projects.imageMissing">Image missing here</span>
             </div>
             <div class="entry-copy">
-              <p>
+              <p data-i18n="projects.payTogetherP1">
                 <!-- escribir algo de que mi amigo adri tambien hizo esto e incluso añadir para que vean su github?  -->
                 [WRITE YOUR TEXT HERE MANUALLY]
                 Summarize how AI OCR works, the receipt flow, and your technical role.
@@ -218,7 +223,7 @@
           </div>
           <div class="project-entry-body">
             <div class="entry-copy">
-              <p>
+              <p data-i18n="projects.spainP1">
                 I created S-Pain to visualize and analyze price data across Spanish provinces.
                 It scrapes data from MIVAU, processes it with Python, and presents it in an interactive Streamlit dashboard.
                 I just felt like doing some data work and this was a fun way to do it!
@@ -229,10 +234,10 @@
                 <li>Data Analysis</li>
               </ul>
             </div>
-            <div class="entry-statuses" aria-label="Reference UI states">
-              <div class="state-chip is-loading">loading</div>
-              <div class="state-chip is-empty">empty</div>
-              <div class="state-chip is-error">error</div>
+            <div class="entry-statuses" aria-label="Reference UI states" data-i18n-attr="aria-label" data-i18n="projects.statesAria">
+              <div class="state-chip is-loading" data-i18n="projects.loading">loading</div>
+              <div class="state-chip is-empty" data-i18n="projects.empty">empty</div>
+              <div class="state-chip is-error" data-i18n="projects.error">error</div>
             </div>
           </div>
         </article>
@@ -242,29 +247,29 @@
     <section class="section" id="experiencia">
       <div class="container experience-layout">
         <div class="section-heading reveal">
-          <p class="eyebrow">Experience</p>
-          <h2>My Journey</h2>
+          <p class="eyebrow" data-i18n="experience.eyebrow">Experience</p>
+          <h2 data-i18n="experience.title">My Journey</h2>
         </div>
         <div class="timeline reveal delay-1">
           <article class="timeline-item">
             <div class="timeline-date">Feb 2026 / Jun 2026</div>
             <div class="timeline-copy">
               <h3>Tecnosis</h3>
-              <p>Software Development Internship</p>
-              <p>Backend/Frontend development using .NET, Blazor, MySQL, and JavaScript for a web & app notification management.</p>
+              <p data-i18n="experience.tecnosisRole">Software Development Internship</p>
+              <p data-i18n="experience.tecnosisDesc">Backend/Frontend development using .NET, Blazor, MySQL, and JavaScript for a web & app notification management.</p>
             </div>
           </article>
           <article class="timeline-item">
             <div class="timeline-date">Oct 2025</div>
             <div class="timeline-copy">
               <h3>SevillaJam</h3>
-              <p>Game Developer &amp; Producer</p>
-              <p>Core logic in C# and Unity during a 48-hour event under pressure.</p>
+              <p data-i18n="experience.sevillajamRole">Game Developer &amp; Producer</p>
+              <p data-i18n="experience.sevillajamDesc">Core logic in C# and Unity during a 48-hour event under pressure.</p>
             </div>
           </article>
         </div>
         <div class="floating-doodle floating-doodle-experience reveal delay-2 doodle-hover">
-          <div class="doodle-placeholder" role="img" aria-label="Kitty placeholder">
+          <div class="doodle-placeholder" role="img" aria-label="Kitty placeholder" data-i18n-attr="aria-label" data-i18n="experience.doodleAria">
             <img 
             class="doodle-image"
               src="assets/gato-like.png"
@@ -279,7 +284,7 @@
   <footer class="site-footer">
     <div class="container footer-layout">
       <div>
-        <p class="eyebrow">Contact me!</p>
+        <p class="eyebrow" data-i18n="footer.eyebrow">Contact me!</p>
         <ul class="footer-links">
           <li><a href="mailto:carovaquerojuan@gmail.com">carovaquerojuan@gmail.com</a></li>
           <li><a href="tel:+34 634 50 15 33">+34 634 50 15 33</a></li>
@@ -289,7 +294,7 @@
       </div>
       <div class="footer-note">
         <div class="tenor-gif-embed" data-postid="17826137474354671565" data-share-method="host" data-aspect-ratio="1.32353" data-width="100%"><a href="https://tenor.com/view/cat-meme-wave-emoji-cat-wave-cat-wave-gif-17826137474354671565">Cat Meme Wave Emoji GIF</a>from <a href="https://tenor.com/search/cat+meme-gifs">Cat Meme GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <code>console.log("Thanks!.");</code>
+        <code data-i18n="footer.code">console.log("Thanks!.");</code>
       </div>
     </div>
   </footer>

@@ -71,6 +71,12 @@ button {
   padding: 1rem 0;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .brand,
 h1,
 h2 {
@@ -88,6 +94,37 @@ h2 {
   gap: var(--space-2);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.lang-button {
+  min-height: auto;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.lang-button:hover,
+.lang-button:active {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
+}
+
+.lang-button.is-active {
+  border-color: var(--line);
+  background: var(--paper);
+}
+
 .site-nav a {
   padding: 0.25rem 0.55rem;
   border: 1px solid transparent;
@@ -100,6 +137,7 @@ h2 {
 
 .site-nav a:focus-visible,
 .button:focus-visible,
+.lang-button:focus-visible,
 .social-strip a:focus-visible,
 .project-entry-head a:focus-visible,
 .footer-links a:focus-visible {
@@ -223,6 +261,15 @@ h2 {
   margin: 0 0 0.45rem;
   text-transform: uppercase;
   font-size: 0.75rem;
+}
+
+.side-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.side-list li + li {
+  margin-top: 0.15rem;
 }
 
 .code-sheet p {
@@ -599,6 +646,17 @@ h2 {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .header-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lang-switch {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .tool-row,
