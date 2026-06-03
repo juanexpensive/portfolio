@@ -72,11 +72,23 @@
             </ul>
           </div>
           <div class="floating-doodle floating-doodle-hero doodle-hover">
-            <img
-              class="doodle-image"
-              src="assets/samuel-leyendo.jpg"
-              alt="Black and white line-art illustration of a person sitting and reading"
+            <div
+              class="look-toggle"
+              tabindex="0"
+              aria-label="Black and white line-art illustration of a person sitting and reading"
             >
+              <img
+                class="look-toggle__image look-toggle__base"
+                src="assets/samuel-leyendo.jpg"
+                alt="Black and white line-art illustration of a person sitting and reading"
+              >
+              <img
+                class="look-toggle__image look-toggle__hover"
+                src="assets/samuel-mira.png"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
           </div>
         </aside>
       </div>
@@ -192,33 +204,6 @@
           <div class="project-entry-meta">
             <span class="entry-index">02</span>
             <div class="project-entry-head">
-              <h3>PayTogether</h3>
-              <a href="https://github.com/juanexpensive" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <div class="project-entry-body project-entry-body-reverse">
-            <div class="entry-visual image-placeholder" role="img" aria-label="PayTogether visual placeholder" data-i18n-attr="aria-label" data-i18n="projects.payTogetherAria">
-              <span data-i18n="projects.imageMissing">Image missing here</span>
-            </div>
-            <div class="entry-copy">
-              <p data-i18n="projects.payTogetherP1">
-                <!-- escribir algo de que mi amigo adri tambien hizo esto e incluso añadir para que vean su github?  -->
-                [WRITE YOUR TEXT HERE MANUALLY]
-                Summarize how AI OCR works, the receipt flow, and your technical role.
-              </p>
-              <ul class="tag-list">
-                <li>OCR</li>
-                <li>IA</li>
-                <li>Automation</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-entry project-entry-plain reveal delay-3">
-          <div class="project-entry-meta">
-            <span class="entry-index">03</span>
-            <div class="project-entry-head">
               <h3>S-Pain</h3>
               <a href="https://github.com/juanexpensive/spain" target="_blank" rel="noreferrer">GitHub</a>
             </div>
@@ -236,10 +221,8 @@
                 <li>Data Analysis</li>
               </ul>
             </div>
-            <div class="entry-statuses" aria-label="Reference UI states" data-i18n-attr="aria-label" data-i18n="projects.statesAria">
-              <div class="state-chip is-loading" data-i18n="projects.loading">loading</div>
-              <div class="state-chip is-empty" data-i18n="projects.empty">empty</div>
-              <div class="state-chip is-error" data-i18n="projects.error">error</div>
+            <div class="entry-visual image-placeholder" role="img" aria-label="S-Pain visual placeholder">
+              <span data-i18n="projects.imageMissing">Image missing here</span>
             </div>
           </div>
         </article>

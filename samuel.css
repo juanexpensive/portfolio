@@ -27,6 +27,7 @@ body {
   color: var(--fg);
   font-family: "Courier Prime", monospace;
   line-height: 1.7;
+  cursor: url("assets/cursor-pointer.png") 4 3, auto;
 }
 
 a,
@@ -36,10 +37,12 @@ button {
 
 a {
   text-decoration: none;
+  cursor: url("assets/cursor-hand.png") 10 3, pointer;
 }
 
 button {
   font: inherit;
+  cursor: url("assets/cursor-hand.png") 10 3, pointer;
 }
 
 .container {
@@ -146,16 +149,22 @@ h2 {
 }
 
 .hero {
-  min-height: calc(100dvh - 74px);
+  min-height: clamp(620px, 84dvh, 760px);
   display: flex;
   align-items: center;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(1rem, 3vw, 2rem);
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) 310px;
-  gap: var(--space-5);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 320px);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  align-self: start;
 }
 
 .eyebrow {
@@ -178,7 +187,8 @@ h2 {
 }
 
 .hero-note {
-  max-width: 40rem;
+  max-width: 35rem;
+  font-size: 1.02rem;
 }
 
 .hero-actions,
@@ -242,7 +252,9 @@ h2 {
 
 .hero-margin {
   display: grid;
-  gap: var(--space-3);
+  gap: 1rem;
+  align-self: end;
+  margin-top: 1rem;
 }
 
 .margin-block,
@@ -255,6 +267,11 @@ h2 {
 .code-sheet,
 .footer-note {
   padding: var(--space-3);
+}
+
+.note-sheet {
+  max-width: 19.5rem;
+  margin-left: auto;
 }
 
 .margin-label {
@@ -398,39 +415,8 @@ h2 {
   order: 1;
 }
 
-.project-entry-plain .project-entry-body {
-  grid-template-columns: minmax(0, 1fr) 220px;
-}
-
 .entry-copy p:first-child {
   margin-top: 0;
-}
-
-.entry-statuses {
-  display: grid;
-  gap: var(--space-2);
-  align-content: start;
-}
-
-.state-chip {
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--line);
-}
-
-.state-chip.is-loading::after {
-  content: "...";
-  margin-left: 0.4rem;
-}
-
-.state-chip.is-empty {
-  font-style: italic;
-}
-
-.state-chip.is-error {
-  box-shadow: 4px 4px 0 0 #000000;
 }
 
 .tag-list {
@@ -449,9 +435,13 @@ h2 {
 
 .experience-layout {
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-columns: 210px minmax(0, 1fr) 180px;
   gap: var(--space-4);
   align-items: start;
+}
+
+.experience-layout .section-heading {
+  margin-bottom: 0;
 }
 
 .timeline {
@@ -517,14 +507,27 @@ h2 {
   position: relative;
   z-index: 0;
   --doodle-tilt: 0deg;
-  transform: rotate(var(--doodle-tilt));
   transform-origin: center;
 }
 
+.floating-doodle.doodle-hover {
+  transition: none;
+}
+
+.floating-doodle.doodle-hover:hover {
+  animation: none;
+  transform: none;
+}
+
+.floating-doodle.doodle-hover:active {
+  transform: none;
+}
+
 .floating-doodle-hero {
-  width: min(100%, 220px);
+  width: min(100%, 250px);
   margin-left: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: -0.75rem;
   --doodle-tilt: -3deg;
 }
 
@@ -542,9 +545,10 @@ h2 {
 }
 
 .floating-doodle-experience {
-  width: min(100%, 185px);
-  margin-left: auto;
-  margin-top: var(--space-4);
+  width: min(100%, 165px);
+  margin-left: 0;
+  margin-top: 1.5rem;
+  align-self: end;
   --doodle-tilt: 3deg;
 }
 
@@ -558,6 +562,52 @@ h2 {
 
 .doodle-image {
   mix-blend-mode: multiply;
+}
+
+.look-toggle {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 557 / 1024;
+  display: block;
+  cursor: url("assets/cursor-hand.png") 10 3, pointer;
+  background: transparent;
+}
+
+.look-toggle__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.look-toggle__base {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.look-toggle__hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.look-toggle:hover .look-toggle__base,
+.look-toggle:focus-visible .look-toggle__base {
+  opacity: 0;
+}
+
+.look-toggle:hover .look-toggle__hover,
+.look-toggle:focus-visible .look-toggle__hover {
+  opacity: 1;
+}
+
+.look-toggle:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
 }
 
 .doodle-placeholder {
@@ -615,18 +665,22 @@ h2 {
   .two-column,
   .experience-layout,
   .project-entry-body,
-  .project-entry-plain .project-entry-body,
   .footer-layout {
     grid-template-columns: 1fr;
   }
 
   .hero {
     min-height: auto;
-    padding-top: 2rem;
+    padding: 2rem 0 1rem;
   }
 
   .side-column {
     padding-top: 0;
+  }
+
+  .hero-copy,
+  .hero-note {
+    max-width: none;
   }
 
   .floating-doodle-hero,
@@ -635,6 +689,10 @@ h2 {
   .floating-doodle-experience {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .floating-doodle-hero {
+    margin-top: 0.5rem;
   }
 }
 
@@ -712,5 +770,13 @@ h2 {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .look-toggle__hover {
+    transition: none;
+  }
+
+  .look-toggle__base {
+    transition: none;
   }
 }
